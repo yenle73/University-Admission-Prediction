@@ -1,1 +1,21 @@
+import streamlit as st
+import numpy as np
+import pickle as pkl
+
+st.title('University Admission Prediction')
+
+input = open('lrc_admit.pkl', 'rb')
+model = pkl.load(input)
+
+st.header('Input admission information')
+gre = st.number_input('Insert GRE Score')
+toefl = st.number_input('Insert TOEFL Score')
+uni_rate = st.number_input('Insert University Rating')
+sop = st.number_input('Insert SOP')
+lor = st.number_input('Insert LOR')
+cgpa = st.number_input('Insert CGPA')
+re = st.radio('Choose research', [0, 1])
+
+
+
 
