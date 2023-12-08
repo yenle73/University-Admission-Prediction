@@ -4,8 +4,6 @@ import pickle as pkl
 
 st.title('University Admission Prediction')
 
-class_list = {'0': }
-
 input = open('lr_admit.pkl', 'rb')
 model = pkl.load(input)
 
@@ -19,9 +17,10 @@ cgpa = st.number_input('Insert CGPA')
 re = st.radio('Choose research', [0, 1])
 
 if re:
-  feature_vector = np.array([gre, toefl, uni_rate, sop, lor, cgpa, re])
-  rs = (model.predict(feature_vector))[0]
-  st.write(rs)
+  if st.button('Predict'):
+    feature_vector = np.array([gre, toefl, uni_rate, sop, lor, cgpa, re])
+    rs = (model.predict(feature_vector))[0]
+    st.write(rs)
   
 
 
