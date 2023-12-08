@@ -18,9 +18,10 @@ re = st.radio('Choose research', [0, 1])
 
 if re:
   if st.button('Predict'):
-    feature_vector = np.array([gre, toefl, uni_rate, sop, lor, cgpa, re])
-    rs = model.predict(feature_vector)
-    st.write(rs)
+    feature_vector = np.array([gre, toefl, uni_rate, sop, lor, cgpa, research]).reshape(1,-1)
+    result = str((model.predict(feature_vector)[0])[0])
+    st.header('Result')
+    st.write(result)
   
 
 
