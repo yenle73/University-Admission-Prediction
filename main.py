@@ -4,7 +4,7 @@ import pickle as pkl
 
 st.title('University Admission Prediction')
 
-input = open('lrc_admit.pkl', 'rb')
+input = open('lr_admit.pkl', 'rb')
 model = pkl.load(input)
 
 st.header('Input admission information')
